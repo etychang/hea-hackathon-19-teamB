@@ -9,7 +9,7 @@ ui <- dashboardPage(
       "hesector",
       
       fluidPage(
-        
+        DTOutput('eg_tbl')
       )
     ),
     tabItem("countryprofile",

@@ -1,9 +1,9 @@
 # load packages
-library(data.table)
-library(dplyr)
-library(readr)
-library(shinydashboard)
-library(ggplot2)
+library(data.table) # reading data
+library(dplyr) # data manipulations
+library(shinydashboard) # template shiny dashboard
+library(ggplot2) # plotting
+library(DT) # reactive data tables for Shiny
 
 # load data ----
 # Beware takes awhile to load 

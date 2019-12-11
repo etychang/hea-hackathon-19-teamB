@@ -18,5 +18,9 @@ server <- function(input, output) {
       xlab(label="Year") +
       scale_fill_manual(values=c("orange","darkblue","darkgreen"),name = " ")
   })
+  
+  output$eg_tbl = renderDT(
+    iris, options = list(lengthChange = FALSE)
+  )
 }
 
