@@ -12,3 +12,6 @@ sr_table_28_1718 <- data.table::fread(paste0(filepath, "SR_TABLE_28_(2017-18).cs
 unesco_hesa_match <- data.table::fread(paste0(filepath, "UNESCO_HESA_MATCH.csv"))
 unesco_inbound_all <- data.table::fread(paste0(filepath, "UNESCO_INBOUND_ALL.csv"))
 unesco_inbound_country <- data.table::fread(paste0(filepath, "UNESCO_INBOUND_COUNTRY.csv"))
+
+filepath2 <- "//Lonnetapp01/higher education analysis/HE Analysis/Economics Analysis Team/Hackathon/Data/Common data/"
+he_spine <- data.table::fread(paste0(filepath2, "HE_Spine.csv"))``
