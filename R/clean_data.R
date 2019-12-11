@@ -16,3 +16,7 @@ sr_table_28_clean <- sr_table_28 %>%
   filter(`Mode of study` != "All") %>% 
   filter(`Region of domicile` != "Total") %>% 
   filter(`Country of domicile` != "Total")
+
+sr_table_28_clean <- sr_table_28_clean %>% 
+  mutate(`Academic Year` = as.integer(substr(`Academic Year`,1,4)))
+

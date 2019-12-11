@@ -10,7 +10,7 @@ library(DT) # reactive data tables for Shiny
 # source("R/load_data.R")
 
 # do some data tidying ----
-CountryList <- unique(sr_chart_6$`Country of domicile`)
+CountryList <- unique(sr_table_28_clean$`Country of domicile`)
 
 # run the app ----
 runApp('InternationalStudents')

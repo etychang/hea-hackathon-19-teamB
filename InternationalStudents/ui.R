@@ -1,5 +1,5 @@
 ui <- dashboardPage(
-  dashboardHeader(title = "Provider Metrics"),
+  dashboardHeader(title = "International Students"),
   dashboardSidebar(sidebarMenu(
     menuItem("HE Sector", tabName = "hesector", icon = icon("dashboard")),
     menuItem("Country Profile", tabName = "countryprofile", icon = icon("th"))
@@ -9,26 +9,39 @@ ui <- dashboardPage(
       "hesector",
       
       fluidPage(
-        DTOutput('eg_tbl')
+        column(width = 6,
+               box(
+                 title = "Number of entrants by year",
+                 solidHeader = TRUE,
+                 status = "primary",
+                 width = 12,
+                 plotOutput("plotNumbersByCountry", height = 300)
+          )
+        ),
+        column(width = 6,
+          DTOutput('eg_tbl')
+        )
       )
     ),
     tabItem("countryprofile",
             selectInput(
               "provider",
-              label = "Choose a provider to examine",
+              label = "Choose a country to examine",
               choices = CountryList,
-              #unique(HEIspine$Name.x),
-              selected = "Malaysia"
+              selected = "China"
             ),
-          box(
+          fluidPage(
             title = "Number of entrants by year",
             solidHeader = TRUE,
             status = "primary",
-            plotOutput("plot1", height = 250)
+            plotOutput("plot1", height = 500)
           ),  
           
-          valueBox(paste0(6,"%"), "External borrowing", icon = icon("bitcoin"), color = "yellow")
+          valueBox(paste0(6,"%"), "Latest year", icon = icon("bitcoin"), color = "yellow"),
+          valueBox(paste0(27,"%"), "This year", icon = icon("bitcoin"), color = "purple"),
+          valueBox(paste0(183,"%"), "Random borrowing", icon = icon("bitcoin"), color = "blue")
     )
     
   ))
 )
+
