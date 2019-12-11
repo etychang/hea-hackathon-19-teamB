@@ -12,11 +12,11 @@ server <- function(input, output) {
   
   
   output$plot1 <- renderPlot({
-    ggplot(chartdata1(),aes(x =`Academic year, y = Number)) +
-      geom_line(aes(),stat="identity")+
+    ggplot(chartdata1(),aes(x=`Academic year`,y=Number))+
+      geom_bar(aes(),stat="identity")+
       ylab(label='Student Numbers') +
-      xlab(label="Year")
-      # scale_fill_manual(values=c("orange","darkblue","darkgreen"),name = " ")
+      xlab(label="Year") +
+      scale_fill_manual(values=c("orange","darkblue","darkgreen"),name = " ")
   })
 }
 
